@@ -38,7 +38,7 @@ namespace SYBD_Maski
     }
     public class Func
     {
-        public static void LoadData()
+        public static void LoadData(string? Shearch)
         {
 
 
@@ -73,6 +73,9 @@ GROUP BY
                     {
                         while (reader.Read())
                         {
+                            if(Shearch != null)
+                                if (!reader["Name"].ToString().Contains(Shearch))
+                                    continue;
                             String path;
                             if (File.Exists("Resources" + reader["ImageSource"].ToString()))
                             {

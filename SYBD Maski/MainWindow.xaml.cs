@@ -32,7 +32,7 @@ namespace SYBD_Maski
 
             //// Установка данных для списка
             //TileList.ItemsSource = products;
-            Func.LoadData();
+            Func.LoadData(null);
 
         }
         int Position = 0;
@@ -117,6 +117,23 @@ namespace SYBD_Maski
                 LinkLab_BACK.Visibility = Visibility.Hidden;
             }
 
+        }
+
+        private void textBox_TextInput(object sender, TextCompositionEventArgs e)
+        {
+            string shearch = textBox.Text;
+            Connection.PagesProduct.Clear();
+            Func.LoadData(shearch);
+            Window_Activated(sender, e);
+        }
+
+        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string shearch = textBox.Text;
+            ListTovarov.ItemsSource = null;
+            Connection.PagesProduct.Clear();
+            Func.LoadData(shearch);
+            Window_Activated(sender, e);
         }
     }
 }
