@@ -1,0 +1,191 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>SYBD_Maski</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Маска.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="picture.png" />
+    <None Remove="Resources\products\5fb128cc69235.jpg" />
+    <None Remove="Resources\products\5fb128cc719a6.jpg" />
+    <None Remove="Resources\products\5fb128cc753e3.jpg" />
+    <None Remove="Resources\products\5fb128cc7941f.jpg" />
+    <None Remove="Resources\products\5fb128cc7d798.jpg" />
+    <None Remove="Resources\products\5fb128cc80a10.jpg" />
+    <None Remove="Resources\products\5fb128cc84474.jpg" />
+    <None Remove="Resources\products\5fb128cc87b90.jpg" />
+    <None Remove="Resources\products\5fb128cc8b750.jpg" />
+    <None Remove="Resources\products\5fb128cc8f4dd.jpg" />
+    <None Remove="Resources\products\5fb128cc9414b.jpg" />
+    <None Remove="Resources\products\5fb128cc97ff4.jpg" />
+    <None Remove="Resources\products\5fb128cc9bd36.jpg" />
+    <None Remove="Resources\products\5fb128cc9f069.jpg" />
+    <None Remove="Resources\products\5fb128cca31d9.jpg" />
+    <None Remove="Resources\products\5fb128cca6910.jpg" />
+    <None Remove="Resources\products\5fb128cca9d9b.jpg" />
+    <None Remove="Resources\products\5fb128ccae21a.jpg" />
+    <None Remove="Resources\products\5fb128ccb1958.jpg" />
+    <None Remove="Resources\products\5fb128ccb4e8c.jpg" />
+    <None Remove="Resources\products\5fb128ccb97a0.jpg" />
+    <None Remove="Resources\products\5fb128ccbd227.jpg" />
+    <None Remove="Resources\products\5fb128ccc1592.jpg" />
+    <None Remove="Resources\products\5fb128ccc4a86.jpg" />
+    <None Remove="Resources\products\5fb128ccc9a9e.jpg" />
+    <None Remove="Resources\products\5fb128cccdbee.jpg" />
+    <None Remove="Resources\products\5fb128ccd133c.jpg" />
+    <None Remove="Resources\products\5fb128ccd5dc2.jpg" />
+    <None Remove="Resources\products\5fb128ccd8ff6.jpg" />
+    <None Remove="Resources\products\5fb128ccdca1e.jpg" />
+    <None Remove="Resources\products\5fb128cce0042.jpg" />
+    <None Remove="Resources\products\5fb128cce39fa.jpg" />
+    <None Remove="Resources\products\5fb128cce7971.jpg" />
+    <None Remove="Resources\products\5fb128cceae7c.jpg" />
+    <None Remove="Resources\products\5fb128ccef256.jpg" />
+    <None Remove="Resources\products\5fb128ccf3dd2.jpg" />
+    <None Remove="Resources\products\5fb128cd0544b.jpg" />
+    <None Remove="Resources\products\5fb128cd08e3f.jpg" />
+    <None Remove="Resources\products\5fb128cd0d0b1.jpg" />
+    <None Remove="Resources\products\5fb128cd10ec2.jpg" />
+    <None Remove="Resources\products\5fb128cd157f9.jpg" />
+    <None Remove="Resources\products\5fb128cd19baa.jpg" />
+    <None Remove="Resources\products\5fb128cd1e2b9.jpg" />
+    <None Remove="Resources\products\5fb128cd2215f.jpg" />
+    <None Remove="Resources\products\5fb128cd268bf.jpg" />
+    <None Remove="Resources\products\5fb128cd2ab69.jpg" />
+    <None Remove="Resources\products\5fb128cd2ef7a.jpg" />
+    <None Remove="Resources\products\5fb128cd331c4.jpg" />
+    <None Remove="Resources\products\5fb128cd3674d.jpg" />
+    <None Remove="Resources\products\5fb128cd3af5c.jpg" />
+    <None Remove="Resources\products\5fb128cd3e7e4.jpg" />
+    <None Remove="Resources\products\5fb128cd41ece.jpg" />
+    <None Remove="Resources\products\5fb128cd4672c.jpg" />
+    <None Remove="Resources\products\5fb128cd4c99d.jpg" />
+    <None Remove="Resources\products\5fb128cd50a70.jpg" />
+    <None Remove="Resources\products\5fb128cd5433e.jpg" />
+    <None Remove="Resources\products\5fb128cd5838d.jpg" />
+    <None Remove="Resources\products\5fb128cd5bb7d.jpg" />
+    <None Remove="Resources\products\5fb128cd5ff78.jpg" />
+    <None Remove="Resources\products\5fb128cd63666.jpg" />
+    <None Remove="Resources\products\5fb128cd66df6.jpg" />
+    <None Remove="Resources\products\5fb128cd6a2b6.jpg" />
+    <None Remove="Resources\products\5fb128cd6e4ee.jpg" />
+    <None Remove="Resources\products\5fb128cd71db3.jpg" />
+    <None Remove="Resources\products\5fb128cd7518c.jpg" />
+    <None Remove="Resources\products\5fb128cd78fce.jpg" />
+    <None Remove="Resources\products\5fb128cd7d2cd.jpg" />
+    <None Remove="Resources\products\5fb128cd80a06.jpg" />
+    <None Remove="Resources\products\5fb128cd8417e.jpg" />
+    <None Remove="Resources\products\5fb128cd8818d.jpg" />
+    <None Remove="Маска.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\products\5fb128cd66df6.jpg" />
+    <Content Include="Маска.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="5.1.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\products\picture.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\products\5fb128cc69235.jpg" />
+    <Content Include="Resources\products\5fb128cc719a6.jpg" />
+    <Content Include="Resources\products\5fb128cc753e3.jpg" />
+    <Content Include="Resources\products\5fb128cc7941f.jpg" />
+    <Content Include="Resources\products\5fb128cc7d798.jpg" />
+    <Content Include="Resources\products\5fb128cc80a10.jpg" />
+    <Content Include="Resources\products\5fb128cc84474.jpg" />
+    <Content Include="Resources\products\5fb128cc87b90.jpg" />
+    <Content Include="Resources\products\5fb128cc8b750.jpg" />
+    <Content Include="Resources\products\5fb128cc8f4dd.jpg" />
+    <Content Include="Resources\products\5fb128cc9414b.jpg" />
+    <Content Include="Resources\products\5fb128cc97ff4.jpg" />
+    <Content Include="Resources\products\5fb128cc9bd36.jpg" />
+    <Content Include="Resources\products\5fb128cc9f069.jpg" />
+    <Content Include="Resources\products\5fb128cca31d9.jpg" />
+    <Content Include="Resources\products\5fb128cca6910.jpg" />
+    <Content Include="Resources\products\5fb128cca9d9b.jpg" />
+    <Content Include="Resources\products\5fb128ccae21a.jpg" />
+    <Content Include="Resources\products\5fb128ccb1958.jpg" />
+    <Content Include="Resources\products\5fb128ccb4e8c.jpg" />
+    <Content Include="Resources\products\5fb128ccb97a0.jpg" />
+    <Content Include="Resources\products\5fb128ccbd227.jpg" />
+    <Content Include="Resources\products\5fb128ccc1592.jpg" />
+    <Content Include="Resources\products\5fb128ccc4a86.jpg" />
+    <Content Include="Resources\products\5fb128ccc9a9e.jpg" />
+    <Content Include="Resources\products\5fb128cccdbee.jpg" />
+    <Content Include="Resources\products\5fb128ccd133c.jpg" />
+    <Content Include="Resources\products\5fb128ccd5dc2.jpg" />
+    <Content Include="Resources\products\5fb128ccd8ff6.jpg" />
+    <Content Include="Resources\products\5fb128ccdca1e.jpg" />
+    <Content Include="Resources\products\5fb128cce0042.jpg" />
+    <Content Include="Resources\products\5fb128cce39fa.jpg" />
+    <Content Include="Resources\products\5fb128cce7971.jpg" />
+    <Content Include="Resources\products\5fb128cceae7c.jpg" />
+    <Content Include="Resources\products\5fb128ccef256.jpg" />
+    <Content Include="Resources\products\5fb128ccf3dd2.jpg" />
+    <Content Include="Resources\products\5fb128cd0544b.jpg" />
+    <Content Include="Resources\products\5fb128cd08e3f.jpg" />
+    <Content Include="Resources\products\5fb128cd0d0b1.jpg" />
+    <Content Include="Resources\products\5fb128cd10ec2.jpg" />
+    <Content Include="Resources\products\5fb128cd157f9.jpg" />
+    <Content Include="Resources\products\5fb128cd19baa.jpg" />
+    <Content Include="Resources\products\5fb128cd1e2b9.jpg" />
+    <Content Include="Resources\products\5fb128cd2215f.jpg" />
+    <Content Include="Resources\products\5fb128cd268bf.jpg" />
+    <Content Include="Resources\products\5fb128cd2ab69.jpg" />
+    <Content Include="Resources\products\5fb128cd2ef7a.jpg" />
+    <Content Include="Resources\products\5fb128cd331c4.jpg" />
+    <Content Include="Resources\products\5fb128cd3674d.jpg" />
+    <Content Include="Resources\products\5fb128cd3af5c.jpg" />
+    <Content Include="Resources\products\5fb128cd3e7e4.jpg" />
+    <Content Include="Resources\products\5fb128cd41ece.jpg" />
+    <Content Include="Resources\products\5fb128cd4672c.jpg" />
+    <Content Include="Resources\products\5fb128cd4c99d.jpg" />
+    <Content Include="Resources\products\5fb128cd50a70.jpg" />
+    <Content Include="Resources\products\5fb128cd5433e.jpg" />
+    <Content Include="Resources\products\5fb128cd5838d.jpg" />
+    <Content Include="Resources\products\5fb128cd5bb7d.jpg" />
+    <Content Include="Resources\products\5fb128cd5ff78.jpg" />
+    <Content Include="Resources\products\5fb128cd63666.jpg" />
+    <Content Include="Resources\products\5fb128cd6a2b6.jpg" />
+    <Content Include="Resources\products\5fb128cd6e4ee.jpg" />
+    <Content Include="Resources\products\5fb128cd71db3.jpg" />
+    <Content Include="Resources\products\5fb128cd7518c.jpg" />
+    <Content Include="Resources\products\5fb128cd78fce.jpg" />
+    <Content Include="Resources\products\5fb128cd7d2cd.jpg" />
+    <Content Include="Resources\products\5fb128cd80a06.jpg" />
+    <Content Include="Resources\products\5fb128cd8417e.jpg" />
+    <Content Include="Resources\products\5fb128cd8818d.jpg" />
+    <Resource Include="Маска.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>

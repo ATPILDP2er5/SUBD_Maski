@@ -1,0 +1,86 @@
+﻿<Window x:Class="SYBD_Maski.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SYBD_Maski"
+        Style="{StaticResource MaterialDesignWindow}"
+        mc:Ignorable="d"
+        Title="СУБД Маски" Height="800" Width="1400" Background="White" MaxWidth="1400" MaxHeight="1000" Icon="/Маска.png" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" FontFamily="Arial" UseLayoutRounding="True" FontSize="20" Activated="Window_Activated">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+
+        </Grid.RowDefinitions>
+        <DockPanel LastChildFill="False" Background="#FFFFFFE1" Height="179" VerticalAlignment="Top" UseLayoutRounding="False">
+            <Image x:Name="image" Width="168" Source="/Маска.png" Height="168" UseLayoutRounding="False">
+                <Image.OpacityMask>
+                    <ImageBrush ImageSource="/Маска.png" TileMode="None" Stretch="UniformToFill" Opacity="1"/>
+                </Image.OpacityMask>
+            </Image>
+            <TextBlock x:Name="textBlock" TextWrapping="Wrap" FontFamily="Arial" FontSize="36" TextAlignment="Center" DockPanel.Dock="Bottom" Height="95" UseLayoutRounding="False"><Run Language="ru-ru" Text="Список продукции"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
+        </DockPanel>
+        <ListBox x:Name="ListTovarov" ItemsSource="{Binding}" Margin="0,264,0,120" d:ItemsSource="{d:SampleData ItemCount=5}" UseLayoutRounding="False">
+            <!-- Панель размещения элементов -->
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+
+            <!-- Шаблон элемента (стоковая строка) -->
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="1" Height="127">
+                        <Canvas x:Name="ElementStandart" Height="120" Width="1350" VerticalAlignment="Center">
+                            <Image x:Name="i_Tovar" Width="160" Height="122" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Top="-1" 
+                                   Source="{Binding ImageSource}" />
+                            <Label x:Name="label_Name" Content="{Binding Name}" Height="40" Canvas.Left="180" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" FontFamily="Arial"/>
+                            <Label x:Name="label_Articul" Content="{Binding Articul}" Height="34" Canvas.Left="180" Canvas.Top="45" Width="auto" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" FontFamily="Arial"/>
+                            <Label x:Name="label_Description" Content="{Binding Description}" Height="auto" Canvas.Left="180" Canvas.Top="84" Width="auto" MaxWidth="1044" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Arial" FontSize="20"/>
+                            <Label x:Name="label_Cost" Content="{Binding Cost}" Height="40" Canvas.Left="1192" Canvas.Top="2" Width="auto" FontSize="22" FontFamily="Arial" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        </Canvas>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ComboBox x:Name="SortBox" Margin="763,184,0,0" Width="300" Height="60" UseLayoutRounding="False" FontFamily="Arial" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <ComboBox x:Name="FilterBox" Margin="1093,184,0,0" Height="60" Width="260" UseLayoutRounding="False" FontFamily="Arial" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox" Height="60" Margin="20,184,0,0" TextWrapping="Wrap" Width="608" FontFamily="Arial" FontSize="20" VerticalContentAlignment="Center" UseLayoutRounding="False" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Button x:Name="b_Search" Content="Поиск" Height="60" Margin="633,184,0,0" FontFamily="Arial" FontSize="20" Width="100" UseLayoutRounding="False" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFF9C1A" Foreground="Black" BorderBrush="#FFFFFFE1"/>
+        <ProgressBar x:Name="PB_Download" Margin="71,711,0,0" Height="26" UseLayoutRounding="False" VerticalAlignment="Top" HorizontalAlignment="Left" Width="380" BorderBrush="#FFFFFFE1" Background="#FFFF9C1A"/>
+        <TextBlock x:Name="LinkLab_BACK" Margin="1179,699,0,0" FontSize="24" FontFamily="Arial" Width="auto" UseLayoutRounding="False" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Visibility="Hidden">
+            <Hyperlink x:Name="HB_Back" Click="Action_Back">
+                &lt;
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock x:Name="LinkLab_1" Margin="1201,699,0,0" FontSize="24" FontFamily="Arial" HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" UseLayoutRounding="False" Height="26">
+            <Hyperlink x:Name="HB_1" Click="Action_1">
+                1
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock x:Name="LinkLab_2" Margin="1220,699,0,0" FontSize="24" FontFamily="Arial" HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" UseLayoutRounding="False" Height="26">
+            <Hyperlink x:Name="HB_2" Click="Action_2">
+                2
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock x:Name="LinkLab_3" Margin="1240,699,0,0" FontSize="24" FontFamily="Arial" HorizontalAlignment="Left" VerticalAlignment="Top" Width="auto" UseLayoutRounding="False" Height="26">
+            <Hyperlink x:Name="HB_3" Click="Action_3">
+                3
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock x:Name="LinkLab_4" Margin="1260,699,0,0" FontSize="24" FontFamily="Arial" HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" UseLayoutRounding="False" Height="26">
+            <Hyperlink x:Name="HB_4" Click="Action_4">
+                4
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock x:Name="LinkLab_NEXT" Margin="1280,699,0,0" FontSize="24"  FontFamily="Arial" Width="auto" UseLayoutRounding="False" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Hyperlink x:Name="HB_Next" Click="Action_Next">
+                >
+            </Hyperlink>
+        </TextBlock>
+    </Grid>
+</Window>
