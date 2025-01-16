@@ -22,7 +22,7 @@ namespace SYBD_Maski
 
         public MainWindow()
         {
-
+            InitializeComponent();
             //var products = new ObservableCollection<Product>
             //{
             //    new Product { Name = "Продукт 1", Articul = "12345", Description = "Краткое описание 1", Cost = "1000 руб.", ImageSource = "/picture1.png" },
@@ -42,6 +42,7 @@ namespace SYBD_Maski
                 ListTovarov.ItemsSource = Connection.PagesProduct[0];
             else
                 MessageBox.Show("Список товаров пуст", "Error");
+
             int Pages = Connection.PagesProduct.Count;
             if (Pages <= 4) 
             {
@@ -119,21 +120,14 @@ namespace SYBD_Maski
 
         }
 
-        private void textBox_TextInput(object sender, TextCompositionEventArgs e)
-        {
-            string shearch = textBox.Text;
-            Connection.PagesProduct.Clear();
-            Func.LoadData(shearch);
-            Window_Activated(sender, e);
-        }
+        //private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        //{
+        //    string shearch = textBox.Text;
+        //    ListTovarov.ItemsSource = null;
+        //    Connection.PagesProduct.Clear();
+        //    Func.LoadData(shearch);
+            
+        //}
 
-        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            string shearch = textBox.Text;
-            ListTovarov.ItemsSource = null;
-            Connection.PagesProduct.Clear();
-            Func.LoadData(shearch);
-            Window_Activated(sender, e);
-        }
     }
 }
