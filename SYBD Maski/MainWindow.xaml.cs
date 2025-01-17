@@ -22,7 +22,7 @@ namespace SYBD_Maski
 
         public MainWindow()
         {
-            InitializeComponent();
+            
             //var products = new ObservableCollection<Product>
             //{
             //    new Product { Name = "Продукт 1", Articul = "12345", Description = "Краткое описание 1", Cost = "1000 руб.", ImageSource = "/picture1.png" },
@@ -32,16 +32,20 @@ namespace SYBD_Maski
 
             //// Установка данных для списка
             //TileList.ItemsSource = products;
+            SortElimaent.GetElementsSort();
             Func.LoadData(null);
+            
+            
 
         }
         int Position = 0;
         private void Window_Activated(object sender, EventArgs e)
         {
-            if (Connection.PagesProduct.Count != 0)
-                ListTovarov.ItemsSource = Connection.PagesProduct[0];
-            else
-                MessageBox.Show("Список товаров пуст", "Error");
+            FilterBox.ItemsSource = ConnectionBase.FilterElements;
+            FilterBox.SelectedIndex = 0;
+            SortBox.ItemsSource = ConnectionBase.SortVar;
+            SortBox.SelectedIndex = 0;
+            
 
             int Pages = Connection.PagesProduct.Count;
             if (Pages <= 4) 
@@ -120,13 +124,50 @@ namespace SYBD_Maski
 
         }
 
+        private void SortBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void FilterBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+        public void RefreshData()
+        {
+            int y = 0;
+            List<Product> newElement = [];
+            // Вывод на экран (для проверки)
+            foreach (var product in Connection.products)
+            {
+                if (y != 19)
+                {
+                    newElement.Add(product);
+                    y++;
+                }
+                else
+                {
+                    y = 0;
+                    newElement.Add(product);
+                    Connection.AddItem(newElement);
+                    newElement.Clear();
+                }
+            }
+            y = 0;
+            Connection.AddItem(newElement);
+            newElement.Clear();
+            if (Connection.PagesProduct.Count != 0)
+                ListTovarov.ItemsSource = Connection.PagesProduct[0];
+            else
+                MessageBox.Show("Список товаров пуст", "Error");
+        }
         //private void textBox_TextChanged(object sender, TextChangedEventArgs e)
         //{
         //    string shearch = textBox.Text;
         //    ListTovarov.ItemsSource = null;
         //    Connection.PagesProduct.Clear();
         //    Func.LoadData(shearch);
-            
+
         //}
 
     }

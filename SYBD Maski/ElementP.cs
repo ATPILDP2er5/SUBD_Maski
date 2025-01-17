@@ -99,27 +99,6 @@ GROUP BY
                     }
                 }
             }
-            int y = 0;
-            List<Product> newElement = [];
-            // Вывод на экран (для проверки)
-            foreach (var product in Connection.products)
-            {
-                if (y != 19)
-                {
-                    newElement.Add(product);
-                    y++;
-                }
-                else
-                {
-                    y = 0;
-                    newElement.Add(product);
-                    Connection.AddItem(newElement);
-                    newElement.Clear();
-                }
-            }
-            y = 0;
-            Connection.AddItem(newElement);
-            newElement.Clear();
         }
     }
 

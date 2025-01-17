@@ -48,9 +48,10 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <ComboBox x:Name="SortBox" materialDesign:HintAssist.Hint="Сортировка" Margin="705,184,0,0" Width="320" Height="60" UseLayoutRounding="False" FontFamily="Arial" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <ComboBox x:Name="FilterBox" materialDesign:HintAssist.Hint="Фильтрация" Margin="1030,184,0,0" Height="60" Width="323" UseLayoutRounding="False" FontFamily="Arial" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox" materialDesign:HintAssist.Hint="Введите для поиска" Height="60" Margin="20,184,0,0" TextWrapping="Wrap" Width="680" FontFamily="Arial" FontSize="20" VerticalContentAlignment="Center" UseLayoutRounding="False" VerticalAlignment="Top" HorizontalAlignment="Left" TextInput="textBox_TextInput" TextChanged="textBox_TextChanged" />
+        <ComboBox x:Name="SortBox" materialDesign:HintAssist.Hint="Сортировка" Margin="705,184,0,0" Width="320" Height="60" UseLayoutRounding="False" FontFamily="Arial" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" IsDropDownOpen="True" SelectionChanged="SortBox_SelectionChanged">
+        </ComboBox>
+        <ComboBox x:Name="FilterBox" materialDesign:HintAssist.Hint="Фильтрация" Margin="1030,184,0,0" Height="60" Width="323" UseLayoutRounding="False" FontFamily="Arial" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="FilterBox_SelectionChanged"/>
+        <TextBox x:Name="textBox" materialDesign:HintAssist.Hint="Введите для поиска" Height="60" Margin="20,184,0,0" TextWrapping="Wrap" Width="680" FontFamily="Arial" FontSize="20" VerticalContentAlignment="Center" UseLayoutRounding="False" VerticalAlignment="Top" HorizontalAlignment="Left" />
         <ProgressBar x:Name="PB_Download" Margin="71,711,0,0" Height="26" UseLayoutRounding="False" VerticalAlignment="Top" HorizontalAlignment="Left" Width="380" BorderBrush="#FFFFFFE1" Background="#FFFF9C1A"/>
         <TextBlock x:Name="LinkLab_BACK" Margin="1179,699,0,0" FontSize="24" FontFamily="Arial" Width="auto" UseLayoutRounding="False" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Visibility="Hidden">
             <Hyperlink x:Name="HB_Back" Click="Action_Back">
