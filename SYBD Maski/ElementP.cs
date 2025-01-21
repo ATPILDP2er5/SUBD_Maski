@@ -13,6 +13,7 @@ namespace SYBD_Maski
 {
     public class Product
     {
+        public int id { get; set; }
         public string? Name { get; set; }          // Имя/Тип
         public int? Articul { get; set; }      // Артикул
         public string? Description { get; set; }  // Описание
@@ -38,12 +39,13 @@ namespace SYBD_Maski
     }
     public class Func
     {
-        public static void LoadData(string? Shearch)
+        public static void LoadData()
         {
 
 
             string query = @"
             SELECT 
+    Product.ProductTypeID AS TypeID,
     Product.Title AS Name, 
     Product.ArticleNumber AS Articul, 
     Product.MinCostForAgent AS Cost, 
@@ -56,6 +58,7 @@ LEFT JOIN
 LEFT JOIN 
     Material ON ProductMaterial.MaterialID = Material.ID
 GROUP BY 
+	Product.ProductTypeID,
     Product.Title, 
     Product.ArticleNumber, 
     Product.MinCostForAgent, 
@@ -73,9 +76,6 @@ GROUP BY
                     {
                         while (reader.Read())
                         {
-                            if(Shearch != null)
-                                if (!reader["Name"].ToString().Contains(Shearch))
-                                    continue;
                             String path;
                             if (File.Exists("Resources" + reader["ImageSource"].ToString()))
                             {
@@ -87,6 +87,7 @@ GROUP BY
                             }
                             Product product = new()
                             {
+                                id = Convert.ToInt32(reader["TypeID"]),
                                 Name = reader["Name"].ToString(),
                                 Articul = Int32.Parse(reader["Articul"].ToString()),
                                 Description = "Материалы:" + reader["Description"].ToString(),
@@ -99,6 +100,9 @@ GROUP BY
                     }
                 }
             }
+            
+
+
         }
     }
 

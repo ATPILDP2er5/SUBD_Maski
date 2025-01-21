@@ -33,8 +33,8 @@ namespace SYBD_Maski
             //// Установка данных для списка
             //TileList.ItemsSource = products;
             SortElimaent.GetElementsSort();
-            Func.LoadData(null);
-            
+            Func.LoadData();
+            RefreshData(null, null, null);
             
 
         }
@@ -133,13 +133,14 @@ namespace SYBD_Maski
         {
 
         }
-        public void RefreshData()
+        public void RefreshData(String? Shearch, String? Filter, String? GroupBy )
         {
             int y = 0;
             List<Product> newElement = [];
             // Вывод на экран (для проверки)
             foreach (var product in Connection.products)
             {
+                if(ExplorerGet(Shearch, Filter, product))
                 if (y != 19)
                 {
                     newElement.Add(product);
@@ -160,6 +161,14 @@ namespace SYBD_Maski
                 ListTovarov.ItemsSource = Connection.PagesProduct[0];
             else
                 MessageBox.Show("Список товаров пуст", "Error");
+        }
+        public static bool ExplorerGet(String? Shearch, String? Filter, Product var)
+        {
+            if(Filter!=null)
+            {
+                
+                if (var.)
+            }
         }
         //private void textBox_TextChanged(object sender, TextChangedEventArgs e)
         //{
